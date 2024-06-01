@@ -21,7 +21,7 @@ if (isset($_FILES['file'])) {
 
 		foreach( $xlsx->rows() as $r ) {
 		//     VALUES (NULL, '1', '1', '', '', '', '', '', '', '', '', '', '', '', '', '');		    
-		    $sql_insert = "INSERT INTO `sprzet` (`model`, `nazwa`, `typ`, `ilosc`, `nr`, `barcode`, `magazyn`, `miejsce`, `szerokosc`, `wysokosc`, `glebokosc`, `objetosc`, `waga`, `moc`, `kategoria`, `nrseryjny`) VALUES ('".implode('\',\'', $r )."')";
+		    $sql_insert = "INSERT INTO `sprzet` (`model`, `nazwa`, `typ`, `ilosc`, `nr`, `barcode`, `magazyn`, `miejsce`, `szerokosc`, `wysokosc`, `glebokosc`, `objetosc`, `waga`, `moc`, `kategoria`, `nrseryjny`, `wartosc`) VALUES ('".implode('\',\'', $r )."')";
 		if(!$result = $db->query($sql_insert)){
     die('There was an error running the query sql_insert [' . $db->error . ']');
 }
